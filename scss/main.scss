@@ -1,0 +1,61 @@
+@import './resets.scss';
+@import './variables';
+
+
+@function weight($weght-name){
+    @return map-get($font-weghts, $weght-name);
+}
+@mixin gridColumns($direction) {
+    display:grid;
+    place-items: $direction;
+    
+}
+@mixin theme($light-theme:true) {
+    @if $light-theme{
+        background:lighten($primary-color, 100%);
+        color: darken($text-color, 100%);
+    }
+    
+}
+@mixin mobile {
+    @media(max-wight:$mobile){
+        @content;
+    }
+    
+}
+
+
+body{
+
+    background:$primary-color;
+    color:$text-color;
+    
+}
+.main{
+    @include gridColumns(center);
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 1fr auto;
+    grid-column-gap: 15px;
+    width: 80%;
+    margin: 50px auto;
+
+    #{&}__paragraph{
+        font-weight:weight(medium);
+       
+        &:hover{
+            color:pink;
+        }
+    }
+    @include mobile{
+            display:grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(4,1fr);
+            grid-column-gap: 15px;
+            place-items: center;
+    }
+}
+
+.light{
+    @include theme($light-theme:true)
+}
+
