@@ -18,7 +18,7 @@
     
 }
 @mixin mobile {
-    @media(max-wight:$mobile){
+    @media(max-wight:800px){
         @content;
     }
     
@@ -50,7 +50,7 @@ body{
             display:grid;
             grid-template-columns: 1fr;
             grid-template-rows: repeat(4,1fr);
-            grid-column-gap: 15px;
+            grid-row-gap: 15px;
             place-items: center;
     }
 }

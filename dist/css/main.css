@@ -27,12 +27,12 @@ body {
   color: pink;
 }
 
-@media (max-wight: 800px) {
+@media (max-width: 800px) {
   .main {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 1fr);
-    grid-column-gap: 15px;
+    grid-row-gap: 15px;
     place-items: center;
   }
 }
