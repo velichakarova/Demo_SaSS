@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #272727;
+  color: #fff;
+}
+
+.main {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr auto;
+  grid-column-gap: 15px;
+  width: 80%;
+  margin: 50px auto;
+}
+
+.main .main__paragraph {
+  font-weight: 500;
+}
+
+.main .main__paragraph:hover {
+  color: pink;
+}
+
+@media (max-wight: 800px) {
+  .main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 15px;
+    place-items: center;
+  }
+}
+
+.light {
+  background: white;
+  color: black;
+}
